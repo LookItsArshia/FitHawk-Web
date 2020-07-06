@@ -9,8 +9,6 @@ class Homepage extends React.Component {
             <div>
                 <header>            
             Homepage
-
-            Testing git commands
             </header>
             {/* <Grid>
                 <Grid.Row>
