@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Homepage from './components/Homepage'
+import InfoPage from './components/InfoPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     //   </header>
     // </div>
     <Homepage></Homepage>
+    //<InfoPage></InfoPage>
   );
 }
 
