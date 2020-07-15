@@ -1,5 +1,6 @@
 import React from 'react';
 import {Menu} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 import '../styles/Navbar.css';
 
 
@@ -16,28 +17,34 @@ class Navbar extends React.Component{
                 <Menu secondary >
                     <Menu.Item header style = {{"font-size":"20px"}}>FitHawk</Menu.Item>
                     <Menu.Item
+                    as={Link} to =''
                     position = "right" 
-                    name='Home'
-                    active={activeItem==='Home'}
+                    name='home'
+                    active={activeItem==='home'}
                     onClick={this.handleItemClick}>
                         Home
                     </Menu.Item>
 
                     <Menu.Item 
-                    name='About'
-                    active={activeItem==='About'}
+                    as={Link} to ='about'
+                    name='about'
+                    active={activeItem==='about'}
                     onClick={this.handleItemClick}>
                         About
                     </Menu.Item>
 
-                    <Menu.Item name='Profile'
-                    active={activeItem==='Profile'}
+                    <Menu.Item 
+                    as={Link} to ='profile'
+                    name='profile'
+                    active={activeItem==='profile'}
                     onClick= {this.handleItemClick}>
                         Profile
                     </Menu.Item>
 
-                    <Menu.Item name='Contact'
-                    active = {activeItem==='Contact'}
+                    <Menu.Item 
+                    as={Link} to ='contact'
+                    name='contact'
+                    active = {activeItem==='contact'}
                     onClick= {this.handleItemClick}>
                         Contact
                     </Menu.Item>
