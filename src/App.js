@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homepage from './components/Homepage'
+import ProfilePage from './components/ProfilePage'
 
 class App extends React.Component {
   render(){
@@ -11,7 +11,7 @@ class App extends React.Component {
       //   </header>
       // </div>
 
-      <Homepage></Homepage>
+      <ProfilePage></ProfilePage>
     );
 
   }
