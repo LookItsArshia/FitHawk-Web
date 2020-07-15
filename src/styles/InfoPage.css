@@ -1,0 +1,21 @@
+
+.react-grid-Cell {
+    border: none;
+}
+
+.titleText{
+    /* color: #3b92dd; */
+    text-align: center;
+    width:100%;
+    font-size: 60px;
+    padding-top: 20px;
+}
+
+.bottomText{
+    /* color: #3b92dd; */
+    text-align: left;
+    font-size: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+    padding-top: 60px;
+}

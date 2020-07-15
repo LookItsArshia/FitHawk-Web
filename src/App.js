@@ -10,8 +10,8 @@ function App() {
     //     Welcome to FitHawk
     //   </header>
     // </div>
-    <Homepage></Homepage>
-    //<InfoPage></InfoPage>
+    //<Homepage></Homepage>
+    <InfoPage></InfoPage>
   );
 }
 
