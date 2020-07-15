@@ -1,6 +1,7 @@
 
-.react-grid-Cell {
-    border: none;
+.demoPics {
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .titleText{
@@ -8,7 +9,7 @@
     text-align: center;
     width:100%;
     font-size: 60px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .bottomText{
