@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homepage from './components/Homepage'
+import UploadPage from './components/UploadPage'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
     //     Welcome to FitHawk
     //   </header>
     // </div>
-    <Homepage></Homepage>
+    <UploadPage></UploadPage>
   );
 }
 
