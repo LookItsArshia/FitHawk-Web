@@ -1,24 +1,20 @@
 import React from 'react';
-import Grid from 'semantic-ui-react'
+import { Button, Grid, Image } from 'semantic-ui-react'
+import pic from '../Images/image2.png'
+import '../styles/Loginpage.css'
+import '../styles/Homepage.css'
 
 class Loginpage extends React.Component {
 
 
     render(){
         return(
-            <div>
-                <header>            
-                Loginpage
-            </header>
-            {/* <Grid>
-                <Grid.Row>
-                    <Grid.Column width = {3}>
-
-                    </Grid.Column>
-
-                </Grid.Row>
-
-            </Grid> */}
+        
+            <div className="center">
+                <div className="mainVideo">
+            
+                <Image src={pic} className="pics"></Image>
+            </div>
             </div>
             
 
