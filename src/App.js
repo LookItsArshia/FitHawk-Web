@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.css';
-import Homepage from './components/Homepage'
+import Homepage from './components/Homepage';
+import Navbar from './components/Navbar';
+// import Testpage from './components/Testpage';
+import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     Welcome to FitHawk
-    //   </header>
-    // </div>
-    <Homepage></Homepage>
-  );
-}
+class App extends React.Component {
+  render(){
+    return (
+      <div>
+        <Navbar></Navbar>
+        <Switch>
+          <Route exact path="/" component = {Homepage}/>
+          {/* <Route path="/test" component = {Testpage}/> */}
+        </Switch>
+      </div>
+    );
+  }}
 
 export default App;
