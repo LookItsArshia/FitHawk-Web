@@ -18,12 +18,13 @@ class Loginpage extends React.Component {
                 </div>
                 
                 <h1 className="title" > Welcome to FitHawk</h1>
-                
+                {/*<Divider horizontal>Log-in to your account</Divider>*/}
+                <Divider inverted />
                 <Grid textAlign='center' style={{ height: '50vh' }} verticalAlign='middle'>
                 
                 <Grid.Column style={{ maxWidth: 450 }}>
 
-                <Header as = 'h1' color='black' textAlign='center'>
+                <Header size='huge' color='black' textAlign='center'>
                     <Image src={logo}/> Log-in to your account
                 </Header>
 
@@ -41,9 +42,9 @@ class Loginpage extends React.Component {
                 <Message>
                     <a href='#'>Forgot your password?</a>
                 </Message>
-                <Message>
-                    New to us? <a href='#'>Sign Up</a>
-                </Message>
+                <Divider horizontal>Or</Divider>
+                <Button color='teal' content='New to us? Sign Up' icon='add' labelPosition='left'/>
+    
                 </Grid.Column>
             </Grid>
             </div>
