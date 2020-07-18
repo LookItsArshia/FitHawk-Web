@@ -13,7 +13,7 @@ class App extends React.Component {
         <Navbar></Navbar>
         <Switch>
           <Route exact path="/" component = {Homepage}/>
-          {/* <Route path="/test" component = {Testpage}/> */}
+           <Route path="/login" component = {Loginpage}/>
         </Switch>
       </div>
     );
