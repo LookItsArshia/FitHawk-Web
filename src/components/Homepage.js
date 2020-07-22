@@ -3,7 +3,6 @@ import Grid from 'semantic-ui-react'
 
 class Homepage extends React.Component {
 
-
     render(){
         return(
             <div>
