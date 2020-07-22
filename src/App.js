@@ -1,16 +1,23 @@
 import React from 'react';
 import './App.css';
-import UploadPage from './components/UploadPage.js'
+import Homepage from './components/Homepage'
+import InfoPage from './components/InfoPage';
+import Navbar from './components/Navbar';
+// import Testpage from './components/Testpage';
+import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     Welcome to FitHawk
-    //   </header>
-    // </div>
-    <UploadPage></UploadPage>
-  );
-}
+class App extends React.Component {
+  render(){
+    return (
+      <div>
+        <Navbar></Navbar>
+        <Switch>
+          <Route exact path="/" component = {Homepage}/>
+          <Route path="/about" component = {InfoPage}/>
+          {/* <Route path="/test" component = {Testpage}/> */}
+        </Switch>
+      </div>
+    );
+  }}
 
 export default App;
