@@ -9,7 +9,7 @@ function App() {
     //     Welcome to FitHawk
     //   </header>
     // </div>
-    <UploadPage></UploadPage>
+    <HomePage></HomePage>
   );
 }
 
