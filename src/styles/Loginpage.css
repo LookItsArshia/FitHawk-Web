@@ -1,0 +1,30 @@
+
+
+.mainVideo{
+    display:flex;
+    justify-content: center;
+    height: 400px;
+
+}
+
+.logintotal{
+    width:100%;
+}
+.centerGrid{
+    text-align:'center' ;
+    height: '50vh';
+    vertical-align:'middle';
+}
+
+.font1{
+    text-align:'center';
+    color:'red';
+
+    
+}
+    
+.title{
+    /* color: #3b92dd; */
+    text-align: center;
+    font-size: 60px;
+}
