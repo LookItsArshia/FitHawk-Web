@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Homepage from './components/Homepage';
+import Homepage from './components/Homepage'
+import InfoPage from './components/InfoPage';
 import Navbar from './components/Navbar';
 import Loginpage from './components/Loginpage';
 // import Testpage from './components/Testpage';
@@ -14,6 +15,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component = {Homepage}/>
            <Route path="/login" component = {Loginpage}/>
+          <Route path="/about" component = {InfoPage}/>
+          {/* <Route path="/test" component = {Testpage}/> */}
         </Switch>
       </div>
     );
