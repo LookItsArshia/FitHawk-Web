@@ -19,20 +19,24 @@
 }
 
 .videos{
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+
     font-size: 40px;
 }
 
 .workoutpics{
     display: flex;
     height: 350px;
-    
 
 }
 .uploadButton{
+    
     text-align: center;
     font-size: 25px;
     font-style: bold;
+    
     
 }
 .label{
@@ -41,4 +45,24 @@
 
 .info{
     font-size: 30px;
+}
+
+.centeredColumn{
+    text-align: center;
+}
+
+.pics{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  padding-bottom: 30px;
+}
+.rightAlignedColumn{
+    text-align: right;
+}
+
+.workoutpics{
+    margin-left: auto;
+    margin-right: auto;
+
 }
