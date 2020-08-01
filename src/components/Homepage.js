@@ -6,10 +6,10 @@ import pic from '../assets/image2.png'
 
 
 class Homepage extends React.Component {
-
+    
     render() {
         return (
-
+            
             <div className="center">
                 <div className="mainVideo">
                     {/* <video className="videoTag" autoPlay loop muted style={{
