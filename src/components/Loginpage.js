@@ -4,10 +4,33 @@ import pic from '../Images/image2.png'
 import logo from '../Images/logo.png'
 import '../styles/Loginpage.css'
 import '../styles/Homepage.css'
+import firebase from 'firebase'
+
 
 class Loginpage extends React.Component {
 
 
+
+    handleLogIn=(e)=>{
+        var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('profile');
+        provider.addScope('email');
+        firebase
+        .auth()
+        .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(()=>{
+            firebase.auth().signInWithPopup(provider).then((result)=>{
+                var token = result.credential.accessToken;
+                var user = result.user;
+                // Auth.setLoggedIn(true);
+                console.log(user);
+
+            })
+        })
+        
+
+
+    }
     render(){
         return(
         
@@ -44,7 +67,7 @@ class Loginpage extends React.Component {
                 </Message>
                 <Divider horizontal>Or</Divider>
                 <Button color='teal' content='New to us? Sign Up' icon='add' labelPosition='left'/>
-    
+                <Button onClick={this.handleLogIn}>Sign in with Google</Button>
                 </Grid.Column>
             </Grid>
             </div>
