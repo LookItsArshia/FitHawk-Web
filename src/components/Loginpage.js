@@ -66,8 +66,8 @@ class Loginpage extends React.Component {
                     <a href='#'>Forgot your password?</a>
                 </Message>
                 <Divider horizontal>Or</Divider>
-                <Button color='teal' content='New to us? Sign Up' icon='add' labelPosition='left'/>
-                <Button onClick={this.handleLogIn}>Sign in with Google</Button>
+                <Button color='orange' content='New to us? Sign Up' icon='add' labelPosition='left'/>
+                <Button color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
                 </Grid.Column>
             </Grid>
             </div>
