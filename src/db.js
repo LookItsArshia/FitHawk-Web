@@ -2,9 +2,9 @@
 import firebase from 'firebase';
 
 
-export function writeUserData(userId, query) {
-    firebase.database().ref('users/' + userId).set({
-      userId:userId,
+export function writeUserData(query) {
+  console.log(query.uid)
+    firebase.database().ref('users/' + query.uid).set({
       query
     });
   }
@@ -12,12 +12,14 @@ export function writeUserData(userId, query) {
 
 
   export function readUserData(userId){
-    return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-      var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-      var height = (snapshot.val()&& snapshot.val().height) || 0;
+    return (firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+      console.log(snapshot.val().query.username);
+      var username = (snapshot.val() && snapshot.val().query.username) || 'Anonymous';
+      // var height = (snapshot.val()&& snapshot.val().height) || 0;
+      return username;
       
       // ...
-    });
+    }));
   }
 
 

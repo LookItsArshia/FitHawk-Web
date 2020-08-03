@@ -23,11 +23,12 @@ class Loginpage extends React.Component {
                     console.log(user);
                     console.log(user.uid);
                     const query = {
+                        uid: user.uid,
                         username: "Editing User",
                         height : 10,
                         email: user.email,
                     }
-                    writeUserData(user.uid, query)
+                    writeUserData(query)
                     // console.log(user.name);
 
                 })
