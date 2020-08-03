@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Image, Button } from 'semantic-ui-react'
 import '../styles/ResultsPage.css'
 import pic from '../assets/image2.png'
+import ReactPlayer from 'react-player'
 // import vid from '../assets/video1.mp4';
 
 class InfoPage extends React.Component {
@@ -25,10 +26,10 @@ class InfoPage extends React.Component {
         <Grid divided="vertically" className="mainGrid">
             <Grid.Row columns={2}>
             <Grid.Column>
-                    <Image src={pic} className="pics"></Image>
+                                <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" playing="true"></ReactPlayer>
             </Grid.Column>
             <Grid.Column>
-                <Image src={pic} className="pics"></Image>
+                                <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" playing="true"></ReactPlayer>
             </Grid.Column>
             </Grid.Row>
 
