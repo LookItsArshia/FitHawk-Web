@@ -32,7 +32,7 @@ class ProfilePage extends React.Component {
                 <h2 className="label" > Height:</h2>
                 <h2 className="label" > Weight:</h2>
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column className="leftAlignedColumn">
                 <h2 className="info" > John Smith</h2>
                 <h2 className="info" > 30</h2>
                 <h2 className="info" > 6'0</h2>
