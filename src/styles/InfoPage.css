@@ -1,0 +1,21 @@
+
+.demoPics {
+    margin-top: 14px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.titleText{
+    text-align: center;
+    width:100%;
+    font-size: 60px;
+    padding-top: 40px;
+}
+
+.bottomText{
+    text-align: left;
+    font-size: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+    padding-top: 60px;
+}
