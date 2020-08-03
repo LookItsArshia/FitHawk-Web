@@ -1,19 +1,34 @@
 import React from 'react';
-import { Grid, Image, Header, Button, Embed, Divider } from 'semantic-ui-react'
+import Popup from "reactjs-popup"
+import EditProfile from './EditProfile'
+import {Link} from 'react-router-dom';
+import { Grid, Image, Header, Button, Embed, Divider, Form } from 'semantic-ui-react'
 import '../styles/ProfilePage.css'
 import pic from '../assets/mii.png'
 import workoutpic from '../assets/workout.png'
 
 class ProfilePage extends React.Component {
+    state = {};
+
+    handleButtonClick = (e,{name})=> {this.setState({activeItem:name})};
+    
+    constructor(props){  
+        super(props);  
+        this.state = { showPopup: false };  
+        }  
+        
+          togglePopup() {  
+        this.setState({  
+             showPopup: !this.state.showPopup  
+        });  
+         }  
 
     render() {
+        const {activeItem} = this.state;
         return (
         <div className= "main">
             
             <h1 className="title" > Profile </h1>
-
-            
-            
     
         <div className="centerGrid">
             <Grid columns={2} divided="horizontally" className="mainGrid">
@@ -43,13 +58,17 @@ class ProfilePage extends React.Component {
 
         
             <Grid.Row style={{'padding-top': '30px'}} className="centeredColumn">
-            <Button className="editButton">Edit Profile</Button>
+            <Button className="uploadButton" onClick={this.togglePopup.bind(this)}> Edit Profile</Button>  
+                {this.state.showPopup ?  
+        <EditProfile  
+          //text='Click "Close Button" to hide popup'  
+          //closePopup={this.togglePopup.bind(this)}  
+        />  
+        : null  
+            }  
             </Grid.Row>
             
             </Grid.Column>
-            
-
-
                 <Grid.Column>
                 <h1 className="videos" > My Videos </h1>
                 <Grid.Row style={{'padding-top': '10px'}}/>
@@ -59,7 +78,10 @@ class ProfilePage extends React.Component {
                 <Grid.Row style={{'padding-top': '20px'}}/>
                 <Image src={workoutpic} className="workoutpics"></Image>
                 <Grid.Row style={{'padding-top': '20px'}} className="centeredColumn">
-                <Button className="uploadButton">Upload New Video</Button>
+                
+                <Button className="editButton">Upload New Video</Button>
+
+                
                 </Grid.Row>
                 </Grid.Column>
                    
