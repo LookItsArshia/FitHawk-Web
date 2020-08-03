@@ -5,11 +5,9 @@ import logo from '../Images/logo.png'
 import '../styles/Loginpage.css'
 import '../styles/Homepage.css'
 import firebase from 'firebase'
-import AuthContext from '../App'
-
+import {writeUserData, readUserData} from '../db';
 
 class Loginpage extends React.Component {
-// function Loginpage() {
 
     handleLogIn=(e)=>{
         var provider = new firebase.auth.GoogleAuthProvider();
@@ -23,11 +21,34 @@ class Loginpage extends React.Component {
                     var token = result.credential.accessToken;
                     var user = result.user;
                     console.log(user);
+                    console.log(user.uid);
+                    const query = {
+                        username: "Editing User",
+                        height : 10,
+                        email: user.email,
+                    }
+                    writeUserData(user.uid, query)
+                    // console.log(user.name);
 
                 })
                     .catch(e => console.log(e.message))
             })
     }
+
+    getUser = ()=>{
+        const user = firebase.auth().currentUser
+        if (user){
+            const info = readUserData(user.uid)
+            console.log("Info");
+            console.log(info)
+        }
+        else{
+            console.log("Fail")
+
+        }
+    }
+
+      
     render(){
     return (
 
@@ -65,6 +86,7 @@ class Loginpage extends React.Component {
                     <Divider horizontal>Or</Divider>
                     <Button color='orange' content='New to us? Sign Up' icon='add' labelPosition='left' />
                     <Button color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
+                    <Button content="get User stuff" onClick = {this.getUser}></Button>
                 </Grid.Column>
             </Grid>
         </div>
