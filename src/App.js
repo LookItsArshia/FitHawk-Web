@@ -8,47 +8,35 @@ import Loginpage from './components/Loginpage';
 import { Switch, Route } from 'react-router-dom';
 import Firebase from 'firebase';
 import firebaseConfig from './firebaseConfig'
+import Authenticate from './components/Authenticate';
 
 import { FirebaseDatabaseProvider } from "@react-firebase/database";
 
-// const config = {
-//   apiKey: "AIzaSyCIDMVcSEQgQICEP3UqcBsG7Wwy7rX6aP4",
-//   authDomain: "fithawk-5e179.firebaseapp.com",
-//   databaseURL: "https://fithawk-5e179.firebaseio.com/",
-//   storageBucket: "bucket.appspot.com"
-// };
 Firebase.initializeApp(firebaseConfig);
-class App extends React.Component {
-    
-  
-  constructor(props){
-    super(props)
-    
-    var database = Firebase.database();
-    
-  }
 
-  //  writeUserData = (userId, name, email, imageUrl) =>{
-  //   firebase.database().ref('users/' + userId).set({
-  //     username: name,
-  //     email: email,
-  //     profile_picture : imageUrl
-  //   });
-  // }
+class App extends React.Component {
+
+
+  // var database = Firebase.database();
+  
   render(){
-    return (
+  return (
       <FirebaseDatabaseProvider>
-      <div>
-        <Navbar></Navbar>
-        <Switch>
-          <Route exact path="/" component = {Homepage}/>
-           <Route path="/login" component = {Loginpage}/>
-          <Route path="/about" component = {InfoPage}/>
-          {/* <Route path="/test" component = {Testpage}/> */}
-        </Switch>
-      </div>
+        <div>
+          <Navbar></Navbar>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/login" component={Loginpage} />
+            {/* <Route path="/about" component={InfoPage} /> */}
+            <Authenticate path="/about" component={InfoPage}></Authenticate>
+            
+            {/* <Route path="/test" component = {Testpage}/> */}
+
+          </Switch>
+        </div>
       </FirebaseDatabaseProvider>
-    );
-  }}
+  );
+  }
+}
 
 export default App;
