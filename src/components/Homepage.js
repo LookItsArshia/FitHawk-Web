@@ -1,8 +1,10 @@
 import React from 'react';
 import { Grid, Image, Header, Button, Embed } from 'semantic-ui-react'
 import '../styles/Homepage.css'
-import pic from '../assets/image2.png'
-// import vid from '../assets/video1.mp4';
+import backdrop from '../assets/backdrop.png'
+import pic1 from '../assets/lacingUp.png'
+import pic2 from '../assets/workoutLady.png'
+import pic3 from '../assets/skeletonDemo.png'
 
 
 class Homepage extends React.Component {
@@ -13,12 +15,12 @@ class Homepage extends React.Component {
             <div className="center">
                 <div className="mainVideo">
                     {/* <video className="videoTag" autoPlay loop muted style={{
-                aspectRatio: 1,
-                width: "100%",
-            }}>
+                        aspectRatio: 1,
+                        width: "100%",
+                    }}>
                         <source src={vid} type = 'video/mp4'/>
                     </video> */}
-                    <Image src={pic} className="pics"></Image>
+                    <Image src={backdrop} className="pics"></Image>
                 </div>
                 <h1 className="title" > FitHawk</h1>
                 <div className="centerGrid">
@@ -41,7 +43,7 @@ class Homepage extends React.Component {
                         <Grid.Row style={{'padding-top': '20px'}}>
                             <Grid.Column width={1}/>
                             <Grid.Column width={5}>
-                                <Image src={pic} className="pics"></Image>
+                                <Image src={pic1} className="pics"></Image>
                             </Grid.Column>
                             <Grid.Column width={7}>
                                 <p>Step 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
@@ -65,7 +67,7 @@ class Homepage extends React.Component {
                                     purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</p>
                             </Grid.Column>
                             <Grid.Column width={5}>
-                                <Image src={pic} className="pics"></Image>
+                                <Image src={pic2} className="pics"></Image>
                             </Grid.Column>
                             <Grid.Column width={1}/>
                            
@@ -74,7 +76,8 @@ class Homepage extends React.Component {
                         <Grid.Row>
                             <Grid.Column width={1}/>
                             <Grid.Column width={5}>
-                                <Image src={pic} className="pics"></Image>
+                                <Image src={pic3} className="pics"></Image>
+
                             </Grid.Column>
                             <Grid.Column width={7}>
                             <p>Step 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
