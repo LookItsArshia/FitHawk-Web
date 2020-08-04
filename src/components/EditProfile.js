@@ -132,8 +132,9 @@ submitEditForm() {
               placeholder='Weight...' 
               error={this.state.weightError} />
             </Form.Field>
-                <Button onClick={this.submitEditForm} type='submit'>Submit</Button>
-                <Button color="red" >Cancel</Button>
+            <Button type='submit'>Save and Submit</Button>
+            
+                
             </Form>
             
         )

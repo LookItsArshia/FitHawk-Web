@@ -7,15 +7,19 @@ import '../styles/ProfilePage.css'
 import pic from '../assets/mii.png'
 import workoutpic from '../assets/workout.png'
 
-class ProfilePage extends React.Component {
-    state = {};
 
-    handleButtonClick = (e,{name})=> {this.setState({activeItem:name})};
+//class ProfilePage extends React.Component {
+function ProfilePage(){
+    const [open, setOpen] = React.useState(false)
+    
+
+    //handleButtonClick = (e,{name})=> {this.setState({activeItem:name})};
     
  
 
-    render() {
-        const {activeItem} = this.state;
+    //render() {
+        //const {activeItem} = this.state;
+        
         return (
         <div className= "main">
             
@@ -51,11 +55,17 @@ class ProfilePage extends React.Component {
             <Grid.Row style={{'padding-top': '30px'}} className="centeredColumn">
 
                 <Modal
+                    onClose={() => setOpen(false)}
+                    onOpen={() => setOpen(true)}
+                    open={open}
                 
-                    trigger= {<Button className="editButton" > Edit Profile</Button>}
+                    trigger= {<Button  className="editButton" > Edit Profile</Button>}
                 >
                     <Modal.Header>Edit Profile</Modal.Header>
                     <EditProfile/>
+                    <Grid.Row style={{'padding-top': '10px'}} className="centeredColumn"></Grid.Row>
+                    <Button color="red" onClick={() => setOpen(false)} > Close</Button>
+                    
                 </Modal>
             
             </Grid.Row>
@@ -89,6 +99,6 @@ class ProfilePage extends React.Component {
         
         )
     }
-}
+//}
 
     export default ProfilePage
