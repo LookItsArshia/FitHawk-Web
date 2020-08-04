@@ -24,16 +24,13 @@ class InfoPage extends React.Component {
             </Grid.Row>
         </div>
 
-        <div className="bottomText">
+        <div className="bottomText" >
             <Grid.Row>
-                    <p>Paragraph explaining app:
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
-                        purus sit amet luctus venenatis, lectus magna fringilla Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
-                        purus sit amet luctus venenatis, lectus magna fringilla Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
-                        purus sit amet luctus venenatis, lectus magna fringilla Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
-                        purus sit amet luctus venenatis, lectus magna fringilla Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
-                        purus sit amet luctus venenatis, lectus magna fringilla Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
-                        purus sit amet luctus venenatis, lectus magna fringilla</p>
+                    <p>FitHawk was inspired by its creators desire to work out smarter, not harder! 
+                        Attending Wilfrid Laurier University in Waterloo, Ontario, Canada, like-minded computer science enthusiasts 
+                        Ryan Ottman, Ray Zhao, Matthew Dietrich, Colin Faught, Kamran Tayyab and Arshia Mathur connected to bring their vision to life! 
+                        Bringing low cost, high efficiency workout analysis to the everyday gym goer, it is our hope that FitHawk will inspire others to break through their barriers, 
+                        and give them the feedback to accompany their drive as they strive to take their workouts to the next level.</p>
             </Grid.Row>
         </div>
         </Grid>
