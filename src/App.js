@@ -5,6 +5,7 @@ import InfoPage from './components/InfoPage';
 import Navbar from './components/Navbar';
 // import Testpage from './components/Testpage';
 import { Switch, Route } from 'react-router-dom';
+import UploadPage from './components/UploadPage';
 
 class App extends React.Component {
   render(){
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Route exact path="/" component = {Homepage}/>
           <Route path="/about" component = {InfoPage}/>
           {/* <Route path="/test" component = {Testpage}/> */}
+          <Route path='/upload' component = {UploadPage}></Route>
         </Switch>
       </div>
     );

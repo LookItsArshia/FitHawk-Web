@@ -21,6 +21,9 @@ class UploadPage extends React.Component {
                             <Button.Content visible>Analyze New Video?</Button.Content>
                             <Button.Content hidden>Select Video to Upload...</Button.Content>
                             </Button>
+
+                            <Button content="Choose File" onClick={() => this.fileInputRef.current.click()}>Upload Video</Button>
+                            <input ref={this.fileInputRef} type="file" hidden onChange={this.fileChange}/>
                         </div>
                     </Grid.Row>
                 </Grid>
