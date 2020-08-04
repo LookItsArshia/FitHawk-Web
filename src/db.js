@@ -2,27 +2,47 @@
 import firebase from 'firebase';
 
 
-export function writeUserData(query) {
-  console.log(query.uid)
-    firebase.database().ref('users/' + query.uid).set({
-      query
-    });
-  }
+export function writeUserData(uid, query) {
+  console.log(uid)
+  firebase.database().ref('users/' + uid).set({
+    query
+  });
+}
 
 
 
-  export function readUserData(userId){
-    return (firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-      console.log(snapshot.val().query.username);
-      var username = (snapshot.val() && snapshot.val().query.username) || 'Anonymous';
-      // var height = (snapshot.val()&& snapshot.val().height) || 0;
-      return username;
-      
-      // ...
-    }));
-  }
+export function readUserData(userId) {
+  return (firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+    var name = (snapshot.val() && snapshot.val().query.name) || '';
+    var height = (snapshot.val() && snapshot.val().query.height) || 0;
+    var weight = (snapshot.val() && snapshot.val().query.weight) || 0;
+    var age = (snapshot.val() && snapshot.val().query.age) || 0;
+
+    const info = {
+      name: name,
+      height: height,
+      weight: weight,
+      age: age,
+    }
+    return info
 
 
+  }));
+}
 
-  // module.exports(writeUserData, readUserData);
-  export default {writeUserData,readUserData};
+//***Function to access existing, logged in user.***
+//   getUser = ()=>{
+//     const user = firebase.auth().currentUser
+//     console.log(user);
+//     if (user){
+//         readUserData(user.uid).then((info)=>{
+//             console.log(info)
+//             console.log(info.username);
+//         });
+//     }
+//     else{
+//         console.log("Fail")
+//     }
+// }
+
+export default { writeUserData, readUserData };

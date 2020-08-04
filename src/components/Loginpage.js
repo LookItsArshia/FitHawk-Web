@@ -11,45 +11,27 @@ class Loginpage extends React.Component {
 
     handleLogIn=(e)=>{
         var provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope('profile');
-        provider.addScope('email');
         firebase
             .auth()
             .setPersistence(firebase.auth.Auth.Persistence.SESSION)
             .then(() => {
                 firebase.auth().signInWithPopup(provider).then((result) => {
-                    var token = result.credential.accessToken;
+                    // var token = result.credential.accessToken;
                     var user = result.user;
-                    console.log(user);
-                    console.log(user.uid);
                     const query = {
-                        uid: user.uid,
-                        username: "Editing User",
-                        height : 10,
-                        email: user.email,
-                    }
-                    writeUserData(query)
-                    // console.log(user.name);
+                        name: "",
+                        height : 0,
+                        weight: 0,
+                        age: 0,
 
+                    }
+                    writeUserData(user.uid, query)
                 })
                     .catch(e => console.log(e.message))
             })
     }
 
-    getUser = ()=>{
-        const user = firebase.auth().currentUser
-        if (user){
-            const info = readUserData(user.uid)
-            console.log("Info");
-            console.log(info)
-        }
-        else{
-            console.log("Fail")
 
-        }
-    }
-
-      
     render(){
     return (
 
@@ -87,7 +69,7 @@ class Loginpage extends React.Component {
                     <Divider horizontal>Or</Divider>
                     <Button color='orange' content='New to us? Sign Up' icon='add' labelPosition='left' />
                     <Button color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
-                    <Button content="get User stuff" onClick = {this.getUser}></Button>
+                    {/* <Button content="get User stuff" onClick = {this.getUser}></Button> */}
                 </Grid.Column>
             </Grid>
         </div>
