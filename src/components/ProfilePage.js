@@ -2,7 +2,7 @@ import React from 'react';
 import Popup from "reactjs-popup"
 import EditProfile from './EditProfile'
 import {Link} from 'react-router-dom';
-import { Grid, Image, Header, Button, Embed, Divider, Form } from 'semantic-ui-react'
+import { Grid, Image, Header, Button, Embed, Divider, Form, Modal } from 'semantic-ui-react'
 import '../styles/ProfilePage.css'
 import pic from '../assets/mii.png'
 import workoutpic from '../assets/workout.png'
@@ -12,16 +12,7 @@ class ProfilePage extends React.Component {
 
     handleButtonClick = (e,{name})=> {this.setState({activeItem:name})};
     
-    constructor(props){  
-        super(props);  
-        this.state = { showPopup: false };  
-        }  
-        
-          togglePopup() {  
-        this.setState({  
-             showPopup: !this.state.showPopup  
-        });  
-         }  
+ 
 
     render() {
         const {activeItem} = this.state;
@@ -58,14 +49,15 @@ class ProfilePage extends React.Component {
 
         
             <Grid.Row style={{'padding-top': '30px'}} className="centeredColumn">
-            <Button className="editButton" onClick={this.togglePopup.bind(this)}> Edit Profile</Button>  
-                {this.state.showPopup ?  
-        <EditProfile  
-          //text='Click "Close Button" to hide popup'  
-          //closePopup={this.togglePopup.bind(this)}  
-        />  
-        : null  
-            }  
+
+                <Modal
+                
+                    trigger= {<Button className="editButton" > Edit Profile</Button>}
+                >
+                    <Modal.Header>Edit Profile</Modal.Header>
+                    <EditProfile/>
+                </Modal>
+            
             </Grid.Row>
             
             </Grid.Column>

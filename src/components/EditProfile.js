@@ -6,6 +6,8 @@ import { Grid, Image, Header, Button, Embed, Divider, Form, Checkbox, Modal } fr
 
 class EditProfile extends React.Component {
 
+    
+
     constructor(props) {
         super(props)
 
@@ -80,12 +82,16 @@ submitEditForm() {
         this.setState({formError: false})
       }
 
-}
-    render() {  
-        return (  
 
-            <Form error={this.state.formError} onClose={this.handleClose}>
+}
+
+    
+    render() {  
+        
+        return (  
             
+            <Form error={this.state.formError} onClose={this.handleClose}>
+                        
             <Form.Field>
               <Form.Input 
               required={true} 
@@ -127,9 +133,9 @@ submitEditForm() {
               error={this.state.weightError} />
             </Form.Field>
                 <Button onClick={this.submitEditForm} type='submit'>Submit</Button>
-                <Button color="red" onClick={} >Cancel</Button>
+                <Button color="red" >Cancel</Button>
             </Form>
-        
+            
         )
         }
 }
