@@ -73,26 +73,12 @@ class Homepage extends React.Component {
                             <Grid.Column width={3}/>
                         </Grid.Row>
                     </Grid>
+                    <Button className="bigButton" color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
                 </div>
-
-                <div className="bigButton"><Button style={{padding: '15px 32px'}}>CREATE ACCOUNT</Button>
-                <p>Or Sign in Here!</p></div>
                 
             </div>
-
-
-
-
-
-
-
-
         )
     }
-
-
-
-
 
 }
 
