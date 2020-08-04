@@ -58,7 +58,7 @@ class ProfilePage extends React.Component {
 
         
             <Grid.Row style={{'padding-top': '30px'}} className="centeredColumn">
-            <Button className="uploadButton" onClick={this.togglePopup.bind(this)}> Edit Profile</Button>  
+            <Button className="editButton" onClick={this.togglePopup.bind(this)}> Edit Profile</Button>  
                 {this.state.showPopup ?  
         <EditProfile  
           //text='Click "Close Button" to hide popup'  
