@@ -1,4 +1,6 @@
 import React from 'react';
+import {writeUserData, readUserData} from '../db'
+import firebase from 'firebase'
 
 import { Grid, Image, Header, Button, Embed, Divider, Form, Checkbox, Modal } from 'semantic-ui-react'
 //import '../styles/EditProfile.css'
@@ -6,13 +8,16 @@ import { Grid, Image, Header, Button, Embed, Divider, Form, Checkbox, Modal } fr
 
 class EditProfile extends React.Component {
 
+
+    
+
     
 
     constructor(props) {
         super(props)
 
     this.state = {
-        firstname: '',
+        firstname: 'test',
         lastname:'',
         age: '',
         height: '',
@@ -25,8 +30,37 @@ class EditProfile extends React.Component {
         formError: false,
         formOpen: false
     }
+    this.updateUser = this.updateUser.bind(this);
     this.submitEditForm = this.submitEditForm.bind(this);
     this.successCallback = this.successCallback.bind(this);
+}
+
+
+
+updateUser(e){
+    const user = firebase.auth().currentUser
+    console.log(this.state.firstname)
+    const query = {
+        name: this.state.firstname + " " + this.state.lastname,
+        height : this.state.height,
+        weight: this.state.weight,
+        age: this.state.age,
+    }
+    writeUserData(user.uid, query)
+}
+//***Function to access existing, logged in user.***
+  getUser = ()=>{
+    const user = firebase.auth().currentUser
+    console.log(user);
+    if (user){
+        readUserData(user.uid).then((info)=>{
+            console.log(info)
+            console.log(info.name);
+        });
+    }
+    else{
+        console.log("Fail")
+    }
 }
 
 successCallback() {
@@ -93,6 +127,7 @@ submitEditForm() {
             <Form error={this.state.formError} onClose={this.handleClose}>
                         
             <Form.Field>
+
               <Form.Input 
               required={true} 
               onChange={(e) => this.setState({firstname: e.target.value})} 
@@ -132,8 +167,8 @@ submitEditForm() {
               placeholder='Weight...' 
               error={this.state.weightError} />
             </Form.Field>
-            <Button type='submit'>Save and Submit</Button>
-            
+            <Button type='submit' onClick={this.updateUser}>Save and Submit</Button>
+            <Button onClick={this.getUser}>TEST</Button>
                 
             </Form>
             

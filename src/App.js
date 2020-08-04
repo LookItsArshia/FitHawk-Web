@@ -29,10 +29,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/login" component={Loginpage} />
-            <Route path="/profile" component= {ProfilePage}/>
+            {/* <Route path="/profile" component= {ProfilePage}/> */}
             <Route path="/edit" component= {EditProfile}/>
-            {/* <Route path="/about" component={InfoPage} /> */}
-            <Authenticate path="/about" component={InfoPage}></Authenticate>
+             <Route path="/about" component={InfoPage} /> */
+            <Authenticate path="/profile" component={ProfilePage}></Authenticate>
             
             {/* <Route path="/test" component = {Testpage}/> */}
 
