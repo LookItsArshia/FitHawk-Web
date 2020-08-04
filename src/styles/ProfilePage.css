@@ -1,0 +1,72 @@
+
+
+.title{
+    text-align: center;
+    font-size: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.editButton{
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.centerGrid{
+    
+    margin: 0px 0px 75px 0px;
+}
+
+.videos{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    font-size: 40px;
+}
+
+.workoutpics{
+    display: flex;
+    height: 350px;
+
+}
+.uploadButton{
+    
+    text-align: center;
+    font-size: 25px;
+    font-style: bold;
+    
+    
+}
+.label{
+    font-size: 30px;
+}
+
+.info{
+    font-size: 30px;
+}
+
+.centeredColumn{
+    text-align: center;
+}
+
+.pics{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  padding-bottom: 30px;
+}
+.rightAlignedColumn{
+    text-align: right;
+}
+
+.workoutpics{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.leftAlignedColumn{
+    text-align: left;
+}
