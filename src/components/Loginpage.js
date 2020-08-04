@@ -18,18 +18,26 @@ class Loginpage extends React.Component {
                 firebase.auth().signInWithPopup(provider).then((result) => {
                     // var token = result.credential.accessToken;
                     var user = result.user;
-                    const query = {
-                        name: "",
-                        height : 0,
-                        weight: 0,
-                        age: 0,
 
-                    }
-                    writeUserData(user.uid, query)
+                    readUserData(user.uid).then(info=>{
+                        if (info.email===''){
+                            // console.log("User doesn't exist in db");
+                            const query = {
+                                name: "Click on Edit Profile",
+                                height : '',
+                                weight: '',
+                                age: '',
+                                email: user.email
+                                }
+                            writeUserData(user.uid, query)
+                        }
+                    });   
+                                    
                 })
-                    .catch(e => console.log(e.message))
-            })
+                    .catch(e => console.log(e.message));
+            });
     }
+
 
 
     render(){
@@ -69,7 +77,6 @@ class Loginpage extends React.Component {
                     <Divider horizontal>Or</Divider>
                     <Button color='orange' content='New to us? Sign Up' icon='add' labelPosition='left' />
                     <Button color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
-                    {/* <Button content="get User stuff" onClick = {this.getUser}></Button> */}
                 </Grid.Column>
             </Grid>
         </div>

@@ -3,7 +3,7 @@ import firebase from 'firebase';
 
 
 export function writeUserData(uid, query) {
-  console.log(uid)
+  // console.log(uid)
   firebase.database().ref('users/' + uid).set({
     query
   });
@@ -14,15 +14,17 @@ export function writeUserData(uid, query) {
 export function readUserData(userId) {
   return (firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
     var name = (snapshot.val() && snapshot.val().query.name) || '';
-    var height = (snapshot.val() && snapshot.val().query.height) || 0;
-    var weight = (snapshot.val() && snapshot.val().query.weight) || 0;
-    var age = (snapshot.val() && snapshot.val().query.age) || 0;
+    var height = (snapshot.val() && snapshot.val().query.height) || '';
+    var weight = (snapshot.val() && snapshot.val().query.weight) || '';
+    var age = (snapshot.val() && snapshot.val().query.age) || '';
+    var email = (snapshot.val() && snapshot.val().query.email) || '';
 
     const info = {
       name: name,
       height: height,
       weight: weight,
       age: age,
+      email:email,
     }
     return info
 

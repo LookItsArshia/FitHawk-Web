@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 
 
