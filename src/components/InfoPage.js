@@ -12,7 +12,7 @@ class InfoPage extends React.Component {
         <Grid divided="vertically" className="mainGrid">
             <Grid.Row columns={1}>
                 <Grid.Column>
-                    <Image src={CreatorPhoto} className="pics"></Image>
+                    <Image src={CreatorPhoto} className="videoTag"></Image>
                 </Grid.Column>
             </Grid.Row>
         </Grid>

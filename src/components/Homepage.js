@@ -14,7 +14,7 @@ class Homepage extends React.Component {
 
             <div className="center">
                 <div className="mainVideo">
-                    <Image src={backdrop} className="pics"></Image>
+                    <Image src={backdrop} className="videoTag"></Image>
                 </div>
                 <h1 className="title" > FitHawk</h1>
                 <div className="centerGrid">
@@ -33,7 +33,7 @@ class Homepage extends React.Component {
                         <Grid.Row style={{'padding-top': '10px'}}>
                             <Grid.Column width={1}/>
                             <Grid.Column width={5}>
-                                <Image src={pic1} className="pics"></Image>
+                                <Image src={pic1} className="videoTag"></Image>
                             </Grid.Column>
                             <Grid.Column width={7} style={{'padding-top': '7%'}}>
                                 <p>Step 1: The first step on your FitHawk journey is finding a place to workout! 
@@ -55,7 +55,7 @@ class Homepage extends React.Component {
                                 Once the workout is complete, and the video’s are captured, you’re ready to move onto the next step!</p>
                             </Grid.Column>
                             <Grid.Column width={5}>
-                                <Image src={pic2} className="pics"></Image>
+                                <Image src={pic2} className="videoTag"></Image>
                             </Grid.Column>
                             <Grid.Column width={1}/>
                            
@@ -64,7 +64,7 @@ class Homepage extends React.Component {
                         <Grid.Row>
                             <Grid.Column width={1}/>
                             <Grid.Column width={5}>
-                                <Image src={pic3} className="pics"></Image>
+                                <Image src={pic3} className="videoTag"></Image>
 
                             </Grid.Column>
                             <Grid.Column width={7} style={{'padding-top': '8%'}}>
