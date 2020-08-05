@@ -9,6 +9,7 @@ import EditProfile from './components/EditProfile';
 import ResultsPage from './components/ResultsPage';
 // import Testpage from './components/Testpage';
 import { Switch, Route } from 'react-router-dom';
+import UploadPage from './components/UploadPage';
 import Firebase from 'firebase';
 import firebaseConfig from './firebaseConfig'
 import Authenticate from './components/Authenticate';
@@ -32,8 +33,9 @@ class App extends React.Component {
             <Route path="/login" component={Loginpage} />
             {/* <Route path="/profile" component= {ProfilePage}/> */}
             <Route path="/edit" component= {EditProfile}/>
+          <Route path="/about" component={InfoPage} /> */
+          <Route path='/upload' component={UploadPage}></Route>
 
-             <Route path="/about" component={InfoPage} />
             <Authenticate path="/profile" component={ProfilePage}></Authenticate>
           <Route path="/results" component={ResultsPage}></Route>
 
