@@ -29,7 +29,7 @@ class InfoPage extends React.Component {
                                 <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" playing="true"></ReactPlayer>
             </Grid.Column>
             <Grid.Column>
-                                <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" playing="true"></ReactPlayer>
+                                <ReactPlayer url="http://104.154.143.76/video/video=ZIGuuXU2+t=01:10" playing="true"></ReactPlayer>
             </Grid.Column>
             </Grid.Row>
 
