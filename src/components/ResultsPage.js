@@ -24,10 +24,10 @@ class InfoPage extends React.Component {
         <Grid divided="vertically" className="mainGrid">
             <Grid.Row columns={2}>
             <Grid.Column>
-                                <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" playing="true"></ReactPlayer>
+                                <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" loop="true" playing="true"></ReactPlayer>
             </Grid.Column>
             <Grid.Column>
-                                <ReactPlayer url="http://104.154.143.76/video/video=ZIGuuXU2+t=01:10" playing="true"></ReactPlayer>
+                                <ReactPlayer url="http://104.154.143.76/video/video=694BEBd9+t=09:15" loop="true" playing="true"></ReactPlayer>
             </Grid.Column>
             </Grid.Row>
         </Grid>

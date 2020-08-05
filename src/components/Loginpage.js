@@ -8,7 +8,12 @@ import firebase from 'firebase'
 import {writeUserData, readUserData} from '../db';
 
 class Loginpage extends React.Component {
-
+    contructor() {
+       // super()
+        this.state = {
+            me: firebase.auth().currentUser
+        }
+    }
     handleLogIn=(e)=>{
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase
@@ -19,26 +24,30 @@ class Loginpage extends React.Component {
                     // var token = result.credential.accessToken;
                     var user = result.user;
 
-                    readUserData(user.uid).then(info=>{
-                        if (info.email===''){
+                    readUserData(user.uid).then(info => {
+                        this.isLoggedIn = true;
+                        if (info.email === '') {
                             // console.log("User doesn't exist in db");
                             const query = {
                                 name: "Click on Edit Profile",
-                                height : '',
+                                height: '',
                                 weight: '',
                                 age: '',
                                 email: user.email
-                                }
+                            }
                             writeUserData(user.uid, query)
                         }
-                    });   
-                                    
+                    })
+                   
+                }).then((e) => {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) window.location.href = '/profile';
+                    })
+                    console.log("path: " + firebase.auth().getRedirectResult)
                 })
-                    .catch(e => console.log(e.message));
+                    .catch(e => console.log("Login msg" + e.message));
             });
     }
-
-
 
     render(){
     return (
@@ -68,7 +77,7 @@ class Loginpage extends React.Component {
                                 <Checkbox label='Keep me signed in' />
                                 <Checkbox label='I agree to the Terms and Conditions' />
                             </Form.Field>
-                            <Button color='blue' fluid size='large'> Login</Button>
+                            <Button color='blue' onClick={this.handleLogIn} fluid size='large'> Login</Button>
                         </Segment>
                     </Form>
                     <Message>

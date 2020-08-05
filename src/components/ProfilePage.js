@@ -32,20 +32,18 @@ function ProfilePage() {
     //***Function to access existing, logged in user.***
     const getUser = () => {
         const user = firebase.auth().currentUser
-            console.log(user);
-            if (user) {
-                readUserData(user.uid).then((info) => {
-                    console.log(info)
-                    console.log(info.name);
-                    setName(info.name);
-                    setAge(info.age);
-                    setHeight(info.height);
-                    setWeight(info.weight);
-                });
-            }
-            else {
-                console.log("Fail")
-            }
+        firebase.auth().onAuthStateChanged(function (user) {
+            console.log("Status: " + user);
+            readUserData(user.uid).then((info) => {
+                console.log(info)
+                console.log(info.name);
+                setName(info.name);
+                setAge(info.age);
+                setHeight(info.height);
+                setWeight(info.weight);
+            });
+        })
+
 
     }
     const reDirect = () =>{

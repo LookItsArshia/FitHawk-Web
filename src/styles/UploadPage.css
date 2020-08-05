@@ -2,3 +2,10 @@
     margin-top: 20px;
     font-size: 30px;
 }
+.bottomText{
+    text-align: center;
+    font-size: 25px;
+    margin-right: 60px;
+    margin-left: 60px;
+    padding-top: 60px;
+}

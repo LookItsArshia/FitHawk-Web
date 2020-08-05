@@ -5,7 +5,6 @@ import "../styles/UploadPage.css"
 import placeholderPic from '../assets/VidPlaceholder.jpg'
 import axios from 'axios'
 class UploadPage extends React.Component {
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -28,11 +27,15 @@ class UploadPage extends React.Component {
     }
 
     onClickHandler = () => {
-        const data = new FormData()
-        data.append('file', this.state.selectedFile)
-        axios.post(this.state.url, data, ).then(res => {
-            window.location.href = '/profile';
-        })
+        if (this.state.selectedFile == null) {
+            return alert("No file selected");
+        } else {
+            const data = new FormData()
+            data.append('file', this.state.selectedFile)
+            axios.post(this.state.url, data,).then(res => {
+                window.location.href = '/results';
+            })
+        }
     }
 
 
@@ -64,6 +67,7 @@ class UploadPage extends React.Component {
                     </Grid.Row>
                     <Grid.Row>
                         <img src={placeholderPic} alt="Logo" height="540px" width="960px" />
+                       
                     </Grid.Row>
                     <Grid.Row>
                         <Form onSubmit={this.onFileUpload}>

@@ -10,6 +10,10 @@ import pic3 from '../assets/skeletonDemo.png'
 class Homepage extends React.Component {
 
     render() {
+
+        const handleLogIn = () => {
+            window.location.href = '/login';
+        };
         return (
 
             <div className="center">
@@ -73,7 +77,7 @@ class Homepage extends React.Component {
                             <Grid.Column width={3}/>
                         </Grid.Row>
                     </Grid>
-                    <Button className="bigButton" color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
+                    <Button className="bigButton" style={{width: "15%"}} color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={handleLogIn}></Button>
                 </div>
                 
             </div>
