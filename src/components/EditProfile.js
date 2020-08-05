@@ -45,6 +45,7 @@ updateUser(e){
         height : this.state.height,
         weight: this.state.weight,
         age: this.state.age,
+        email: user.email,
     }
     writeUserData(user.uid, query)
 }
