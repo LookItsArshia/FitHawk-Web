@@ -1,28 +1,40 @@
 import React from 'react'
-import { Grid, Image } from 'semantic-ui-react'
-import '../styles/InfoPage.css'
-import CreatorPhoto from '../assets/GroupPic.png'
+import { Grid, Image, Button } from 'semantic-ui-react'
+import '../styles/ResultsPage.css'
+import pic from '../assets/image2.png'
+import ReactPlayer from 'react-player'
+// import vid from '../assets/video1.mp4';
 
 class InfoPage extends React.Component {
 
     render() {
     return (
+        
+        <div className="fullpage">
         <Grid>
-        <div className="demoPics">
+
+        <div className="titleText">
+            <Grid.Row>
+                    Results
+            </Grid.Row>
+        </div>
+
+
+        <div className="userVids">
         <Grid divided="vertically" className="mainGrid">
-            <Grid.Row columns={1}>
-                <Grid.Column>
-                    <Image src={CreatorPhoto} className="videoTag"></Image>
-                </Grid.Column>
+            <Grid.Row columns={2}>
+            <Grid.Column>
+                                <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" playing="true"></ReactPlayer>
+            </Grid.Column>
+            <Grid.Column>
+                                <ReactPlayer url="http://104.154.143.76/video/video=ZIGuuXU2+t=01:10" playing="true"></ReactPlayer>
+            </Grid.Column>
             </Grid.Row>
         </Grid>
         </div>
 
-        <div className="titleText">
-            <Grid.Row>
-                    About The Creators
-            </Grid.Row>
-        </div>
+
+
 
         <div className="bottomText" >
             <Grid.Row>
@@ -33,8 +45,8 @@ class InfoPage extends React.Component {
                         and give them the feedback to accompany their drive as they strive to take their workouts to the next level.</p>
             </Grid.Row>
         </div>
-        </Grid>
-
+            </Grid>
+            </div>
         )
     }
 }
