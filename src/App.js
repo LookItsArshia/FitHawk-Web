@@ -32,9 +32,11 @@ class App extends React.Component {
             <Route path="/login" component={Loginpage} />
             {/* <Route path="/profile" component= {ProfilePage}/> */}
             <Route path="/edit" component= {EditProfile}/>
+
              <Route path="/about" component={InfoPage} />
             <Authenticate path="/profile" component={ProfilePage}></Authenticate>
           <Route path="/results" component={ResultsPage}></Route>
+
             {/* <Route path="/test" component = {Testpage}/> */}
 
           </Switch>
