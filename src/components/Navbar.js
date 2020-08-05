@@ -42,18 +42,18 @@ class Navbar extends React.Component{
                     </Menu.Item>
 
                     <Menu.Item 
-                    as={Link} to ='contact'
-                    name='contact'
-                    active = {activeItem==='contact'}
+                    as={Link} to ='/login'
+                    name='/login'
+                    active = {activeItem==='/login'}
                     onClick= {this.handleItemClick}>
-                        Contact
+                        Login
                     </Menu.Item>
                 </Menu>
              </div>
         )
         
     }
-
+ 
 
 }
 
