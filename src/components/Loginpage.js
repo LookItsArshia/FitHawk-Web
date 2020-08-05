@@ -6,14 +6,17 @@ import '../styles/Loginpage.css'
 import '../styles/Homepage.css'
 import firebase from 'firebase'
 import {writeUserData, readUserData} from '../db';
+import {Link,Redirect } from 'react-router-dom';
 
 class Loginpage extends React.Component {
     contructor() {
        // super()
         this.state = {
-            me: firebase.auth().currentUser
+            //me: firebase.auth().currentUser,
+            redirect: false
         }
     }
+
     handleLogIn=(e)=>{
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase
@@ -36,20 +39,20 @@ class Loginpage extends React.Component {
                                 email: user.email
                             }
                             writeUserData(user.uid, query)
+                            return <Link to='/profile' > </Link>
                         }
                     })
                    
-                }).then((e) => {
-                    firebase.auth().onAuthStateChanged(function (user) {
-                        if (user) window.location.href = '/profile';
-                    })
-                    console.log("path: " + firebase.auth().getRedirectResult)
-                })
+                }).then(()=> {this.setState({redirect:true})
+                                console.log(this.state)})
                     .catch(e => console.log("Login msg" + e.message));
             });
     }
 
     render(){
+        if (firebase.auth().currentUser) {
+            return <Redirect to='/profile'/>;
+          }
     return (
 
         <div >

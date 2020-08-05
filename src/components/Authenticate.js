@@ -8,6 +8,7 @@ function Authenticate({ path: Path, component: Component }) {
     if(firebase.auth().currentUser){
         return <Route path = {Path} component={Component}/>
     }else{
+        console.log("broke");
         return <Redirect to={{ pathname: '/login' }} />
     }
 

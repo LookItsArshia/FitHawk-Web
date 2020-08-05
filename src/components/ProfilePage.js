@@ -1,13 +1,14 @@
-import React, {useEffect, useRef} from 'react';
-import Popup from "reactjs-popup"
+import React, {useEffect} from 'react';
 import EditProfile from './EditProfile'
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 import { writeUserData, readUserData } from '../db'
 import firebase from 'firebase'
-import { Grid, Image, Header, Button, Embed, Divider, Form, Modal } from 'semantic-ui-react'
+import { Grid, Image, Button, Modal } from 'semantic-ui-react'
 import '../styles/ProfilePage.css'
 import pic from '../assets/mii.png'
 import workoutpic from '../assets/workout.png'
+import ReactPlayer from 'react-player'
+import vid from '../assets/694BEBd9.mp4'
 
 
 //class ProfilePage extends React.Component {
@@ -17,6 +18,8 @@ function ProfilePage() {
     const [age, setAge] = React.useState('')
     const [height, setHeight] = React.useState('')
     const [weight, setWeight] = React.useState('')
+    const [pic, setPic] = React.useState('')
+
 
 
     
@@ -33,14 +36,17 @@ function ProfilePage() {
     const getUser = () => {
         const user = firebase.auth().currentUser
         firebase.auth().onAuthStateChanged(function (user) {
-            console.log("Status: " + user);
+            console.log("Status: ");
+            console.log(user)
             readUserData(user.uid).then((info) => {
                 console.log(info)
                 console.log(info.name);
-                setName(info.name);
+                setName(user.displayName);
                 setAge(info.age);
                 setHeight(info.height);
                 setWeight(info.weight);
+                setPic(user.photoURL)
+                
             });
         })
 
@@ -114,11 +120,14 @@ function ProfilePage() {
                         <Grid.Column>
                             <h1 className="videos" > My Videos </h1>
                             <Grid.Row style={{ 'padding-top': '10px' }} />
-                            <Image src={workoutpic} className="workoutpics"></Image>
+                            {/* <Image src={workoutpic} className="workoutpics"></Image> */}
+                            <ReactPlayer url={vid} loop="true" playing="true"></ReactPlayer>
                             <Grid.Row style={{ 'padding-top': '20px' }} />
-                            <Image src={workoutpic} className="workoutpics"></Image>
+                            {/* <Image src={workoutpic} className="workoutpics"></Image> */}
+                            <ReactPlayer url="http://104.154.143.76/video/video=694BEBd9+t=09:15" loop="true" playing="true"></ReactPlayer>
                             <Grid.Row style={{ 'padding-top': '20px' }} />
-                            <Image src={workoutpic} className="workoutpics"></Image>
+                            {/* <Image src={workoutpic} className="workoutpics"></Image> */}
+                            <ReactPlayer url="http://104.154.143.76/video/video=originalVid+t=01:10" loop="true" playing="true"></ReactPlayer>
                             <Grid.Row style={{ 'padding-top': '20px' }} className="centeredColumn">
 
                                 <Button className="editButton" onClick={reDirect}>Upload New Video</Button>

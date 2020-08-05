@@ -169,7 +169,7 @@ submitEditForm() {
               error={this.state.weightError} />
             </Form.Field>
             <Button type='submit' onClick={this.updateUser}>Save and Submit</Button>
-            <Button onClick={this.getUser}>TEST</Button>
+            {/* <Button onClick={this.getUser}>TEST</Button> */}
                 
             </Form>
             
