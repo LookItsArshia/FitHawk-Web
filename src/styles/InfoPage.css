@@ -13,9 +13,10 @@
 }
 
 .bottomText{
-    text-align: left;
-    font-size: 20px;
+    text-align: center;
+    font-size: 25px;
     margin-right: 60px;
     margin-left: 60px;
     padding-top: 60px;
 }
+

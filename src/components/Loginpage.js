@@ -46,7 +46,7 @@ class Loginpage extends React.Component {
         <div >
             <div className="mainVideo">
 
-                <Image src={pic} className="pics"></Image>
+                <Image src={pic} className="videoTag"></Image>
             </div>
 
             <h1 className="title" > Welcome to FitHawk</h1>
