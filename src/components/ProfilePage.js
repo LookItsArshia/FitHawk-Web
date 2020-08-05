@@ -48,7 +48,9 @@ function ProfilePage() {
             }
 
     }
-
+    const reDirect = () =>{
+        window.location.href = '/upload';
+    };
     useEffect(() => {
        getUser();
      }, []);
@@ -121,7 +123,7 @@ function ProfilePage() {
                             <Image src={workoutpic} className="workoutpics"></Image>
                             <Grid.Row style={{ 'padding-top': '20px' }} className="centeredColumn">
 
-                                <Button className="editButton">Upload New Video</Button>
+                                <Button className="editButton" onClick={reDirect}>Upload New Video</Button>
 
 
                             </Grid.Row>
