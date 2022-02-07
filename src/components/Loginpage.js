@@ -89,6 +89,7 @@ class Loginpage extends React.Component {
                     <Divider horizontal>Or</Divider>
                     <Button color='orange' content='New to us? Sign Up' icon='add' labelPosition='left' />
                     <Button color='teal' content='Sign in with Google' icon='google' labelPosition='left' onClick={this.handleLogIn}></Button>
+
                 </Grid.Column>
             </Grid>
         </div>
