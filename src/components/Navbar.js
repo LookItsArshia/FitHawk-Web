@@ -2,15 +2,30 @@ import React from 'react';
 import {Menu} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import '../styles/Navbar.css';
-
+import firebase from 'firebase';
 
 
 class Navbar extends React.Component{
-    state = {};
+    constructor(props){
+        super();
+        this.state = {login: firebase.auth().currentUser ? "Logout" : "Login"};
+    }
     handleItemClick = (e,{name})=> this.setState({activeItem:name});
+    handleLogout = (e)=>{
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            console.log("shit worked")
+            window.location.href= '/';
+          }).catch(function(error) {
+            // An error happened.
+            console.log("Shit failed");
+          });
+    }
 
     render(){
         const {activeItem} = this.state;
+
+        
         return(
             <div className ="navStyle">
                 
@@ -46,7 +61,15 @@ class Navbar extends React.Component{
                     name='/login'
                     active = {activeItem==='/login'}
                     onClick= {this.handleItemClick}>
-                        Login
+                        {this.state.login}
+                    </Menu.Item>
+                    
+                    <Menu.Item 
+                    // as={Link} to ='/login'
+                    // name='/login'
+                    // active = {activeItem==='/login'}
+                    onClick= {this.handleLogout}>
+                        Logout
                     </Menu.Item>
                 </Menu>
              </div>

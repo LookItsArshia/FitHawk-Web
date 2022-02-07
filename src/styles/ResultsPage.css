@@ -1,0 +1,32 @@
+.titleText{
+    text-align: center;
+    width:100%;
+    font-size: 40px;
+    padding-top: 50px;
+}
+
+.userVids{
+    margin-right: 30px;
+    margin-left: 30px;
+    padding-top: 50px;
+}
+
+.bottomText{
+    text-align: left;
+    font-size: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+    padding-top: 30px;
+}
+
+.bigButton{
+    text-align: center;
+    width:100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.fullpage{
+    margin-right: 60px;
+    margin-left: 60px;
+}
